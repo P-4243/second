@@ -1,3 +1,18 @@
+/*Question -: A math game is introduced in a school competition to test the skills of students. The game deals with Prime numbers.
+The game rules are as follows:
+
+From the given set of distinct natural numbers as input, consider the smallest natural number as q.
+Your task is to compute the smallest prime number (p) such that when p is divided by all the distinct numbers in the input, except q, should result q as the remainder.
+Constraints :
+
+1 < n < 11
+p < 10 ^ 10
+Input :
+Input consists of n+1 number of distinct natural numbers separated by spaces.
+ 
+Output :
+Print single integer p if such a p exists, else print “None”.*/
+
 #include<iostream>
 using namespace std;
 int main()
