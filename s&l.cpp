@@ -1,3 +1,16 @@
+/*First 10 lines contains snake and ladder board where each line has 10 tokens separated by a space. The tokens can either be integers, Start, End, S(number), L(number) where
+
+Integer denotes the square number
+Start denotes the left bottom position on the board from where player start the game
+End denotes the left top position on the board
+S(number) denotes that the current square has a snake that will take you down to a square number mentioned in the parenthesis.
+L(number) denotes that the current square has a ladder that will take you up to a square number mentioned in the parenthesis.
+Second line contains die_inputs separated by a space.
+Output :
+Find if the player is possible to reach the End or not, based on die_inputs and the board. If it is possible, display ‘Possible’ with number of snakes and ladders encountered during his/her play else display ‘Not possible’ along with number of snakes, number of ladders and the square where the player’s coin has ended at.
+Print all the outputs delimited by a space.
+Refer Examples section for better understanding.*/
+
 #include<iostream>
 #include<vector>
 #include<map>
