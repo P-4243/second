@@ -1,89 +1,41 @@
 #include<iostream>
-#include<vector>
-#include<map>
 using namespace std;
 int main()
-{
-    int i=0,j,shift,val=0,k=0,count=9,read,x;
+{int n=4,a[4],i,p,q,large,j,temp,gd;
+cout<<"enter array elements";
+for(i=0;i<n;i++)
+    cin>>a[i];
+q=a[0];
+for(i=0;i<n;i++)
+{if(a[i]<q)
+ q=a[i];
+ }//q is smallest
+for(i=0;i<n;i++)
+{for(j=0;j<n-1-i;j++)
+ {if(a[j]>a[j+1])
+  {temp=a[j+1];
+   a[j+1]=a[j];
+   a[j]=temp;
+  }
+ }//array is in ascending order
+}
+gd=1;
+ large=a[n-1];
+ int count=0;
+ for(j=1;j<20;j++)
+     {for(i=0;i<n;i++)
+     {large=large*j;
+     if(large%a[i]==0)
+        {count++;
+        }
+     }}
+     if(count==n)
+        gd=large;
+     else
+        for(i=0;i<n;i++)
+        {gd=a[i]*gd;}
 
-    vector<int>die;
-     map<int,int>snake;
-      map<int,int>ladder;
-      vector<vector<string>>v(3,vector<string>(3));
-    vector<vector<int>>board(3,vector<int>(3));
-      cout<<"enter no of die readings";
-      cin>>read;
-      cout<<"enter die readings";
-    for(i=0;i<read;i++)
-    {
-        cin>>x;
-die.push_back(x);
-    }
-
-    cout<<"enter board from 9(End) to 1(Start) -- case sensitive";
-    for(i=0;i<3;++i)
-    {
-        for(j=0;j<3;++j)
-        {
-            cin>>v[i][j];
-
-    string cell=v[i][j];
-    if(cell[0]=='S' && cell[1]=='t')
-    {
-       (board[2][2]=1);
-    }
-    else if(cell[0]=='E' && cell[1]=='n')
-    {
-       (board[0][0]=9);
-    }
-   else if(cell[0]=='L')
-    {shift=stoi(cell.substr(2,cell.size()-2));
-        board[i][j]=--count;
-
-        ladder[count]=shift;
-
-    }
-     else if(cell[0]=='S')
-    {
-        shift=stoi(cell.substr(2,cell.size()-2));
-        board[i][j]=--count;
-
-        snake[count]=shift;
-    }
-    else
-    {
-        board[i][j]=--count;
-    }
-    }
-    }
-
-
-                while(k<read)
-             {
-
-                    val+=die[k];
-
-
-                if(snake.find(val)!=snake.end())
-                {
-                  val=snake[val];
-
-                }
-                else if(ladder.find(val)!=ladder.end())
-                {
-                  val=ladder[val];
-
-                }
-
-              k++;
-
-            }
-
-
-
-    if(val==9)
-        cout<<"u r the win";
-    else
-        cout<<"lose";
-return 0;}
-
+p=gd+q;
+ cout<<"p="<<p;
+ return 0;
+}
